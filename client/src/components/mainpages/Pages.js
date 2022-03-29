@@ -11,6 +11,7 @@ import NotFound from "./utils/not_found/NotFound";
 import Categories from "./categories/Categories";
 import CreateProduct from "./createProduct/CreateProduct";
 import Fooldal from "./fooldal/Fooldal";
+import Contact from "./contact/Contact";
 
 import { GlobalState } from "../../GlobalState";
 
@@ -37,6 +38,7 @@ function Pages() {
         exact
         component={isAdmin ? Categories : NotFound}
       />
+      <Route path="/contact" exact component={isLogged ? Contact : NotFound} />
       <Route
         path="/create_product"
         exact

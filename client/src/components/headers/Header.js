@@ -73,7 +73,7 @@ function Header() {
           style={{ width: "auto", height: "60px", marginBottom: "5px" }}
         />
         {isAdmin ? (
-          <Link to="/">
+          <Link to="/kezdo">
             <h1 style={{ fontFamily: "Wellfleet", textIndent: "15px" }}>
               Admin
             </h1>
@@ -91,7 +91,7 @@ function Header() {
 
       <ul style={styleMenu}>
         <li>
-          <Link to="/">{isAdmin ? "Állataink" : ""}</Link>
+          <Link to="/kezdo">{isAdmin ? "Állataink" : ""}</Link>
         </li>
 
         {isAdmin && adminRouter()}
