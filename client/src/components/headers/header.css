@@ -8,17 +8,16 @@ header{
     overflow: hidden;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     border-bottom: 1px solid #ddd;
     
 }
 header .logo{
-    flex: 1;
+    flex: 1; 
     
-    
-
-    
+       
 }
 header a{
     text-transform: uppercase;

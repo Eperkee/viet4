@@ -2,7 +2,9 @@ import React, {useContext, useState} from 'react'
 import {GlobalState} from '../../GlobalState'
 import Menu from './icon/menu.svg'
 import Close from './icon/close.svg'
-import Cart from './icon/cart.svg'
+import Paw from './icon/pawprint 1.png'
+// import Cart from './icon/cart.svg'
+import NewCart from './icon/newcart.svg'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 
@@ -33,9 +35,9 @@ function Header() {
     const loggedRouter = () =>{
         return(
             <>
-                <li><Link to="/history">Kezdőlap</Link></li>
+                {/* <li><Link to="/fooldal">Kezdőlap</Link></li> */}
                 <li><Link to="/history">Örökbefogadás</Link></li>
-                <li><Link to="/history">Elérhetőségeink</Link></li>
+                <li><Link to="/contact">Elérhetőségeink</Link></li>
                 <li><Link to="/" onClick={logoutUser}>Kilépés</Link></li>
             </>
         )
@@ -54,7 +56,14 @@ function Header() {
 
             <div className="logo">
                 <h1>
-                    <Link to="/">{isAdmin ? 'Admin' : 'Fürge lábak állatmenhely'}</Link>
+                    <img src={Paw} alt="kép" />
+                    {
+                    isAdmin ?
+                    <Link to="/"><p>Admin</p></Link> 
+                    :
+                    <Link to="/kezdo"><p>Fürge lábak állatmenhelyek</p></Link>
+                }
+                    {/* <Link to="/"><p>{isAdmin ? 'Admin' : 'Fürge lábak állatmenhelyek'}</p></Link> */}
                     
                 </h1>
             </div>
@@ -78,8 +87,8 @@ function Header() {
                 isAdmin ? '' 
                 :<div className="cart-icon">
                     <span>{cart.length}</span>
-                    <Link to="/newcart">
-                        <img src={Cart} alt="" width="30" />
+                    <Link to="/cart">
+                        <img src={NewCart} alt="" width="30" />
                     </Link>
                 </div>
             }
